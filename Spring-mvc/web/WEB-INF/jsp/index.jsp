@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,40 +12,39 @@
     </head>
 
     <body>
-        <p class="display-1">Bienvenido al crud en Spring.</p>
+       
         
-        <div class="container">
+        <div class="container mt-4">
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a class="btn btn-primary" href="agregar.htm">Agregar</a>
+                    <a href="agregar.htm">Agregar</a>
                 </div>
-                
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NOMBREs</th>
-                            <th>CORREO</th>
-                            <th>NACIONALIDAD</th>
-                            <th>ACCIONES</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="card-body">
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>CORREO</th>
+                                <th>NACIONALIDAD</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="dato" items="${listar}" >
+                            <tr>
+                                <td>${dato.id}</td>
+                                <td>${dato.Nombre}</td>
+                                <td>${dato.Correo}</td>
+                                <td>${dato.Nacionalidad}</td>
+                                <td></td>
+                            </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
 
-                
-                
+                </div>
             </div>
-            
-        </div>
         
         
         
