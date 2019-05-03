@@ -19,7 +19,12 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">indexController</prop>
+               
+                
+                
+                <!-- se mandan llamar los controladores abajo asiganados para que se reflejen en documento js´p
+                en la misma carpeta jsp-->
+                <prop key="index.htm">controlador</prop>    
             </props>
         </property>
     </bean>
@@ -32,8 +37,9 @@
     <!--
     The index controller.
     -->
-    <bean name="indexController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index" />
-
+    
+    <!---se agrega el controllador aquel donde va 
+      a hacer las peticiones y respuestas del mismo 
+    -->
+    <bean name="controlador" class="Controller.Controlador" />
 </beans>
