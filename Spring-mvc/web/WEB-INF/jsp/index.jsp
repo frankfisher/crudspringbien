@@ -13,17 +13,21 @@
 
     <body>
        
+        <div class="container">
         
+        <p class="display-1">Hola bienvenido </p>
+        <h1>A un crud hecho en spring y Sql</h1>
+        </div>
         <div class="container mt-4">
             <div class="card border-info">
                 <div class="card-header bg-info text-white">
-                    <a href="agregar.htm">Agregar</a>
+                    <a class="btn btn-light" href="agregar.htm">Agregar</a>
                 </div>
                 <div class="card-body">
-                    <table border="1">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th >ID</th>
                                 <th>NOMBRE</th>
                                 <th>CORREO</th>
                                 <th>NACIONALIDAD</th>
@@ -33,11 +37,14 @@
                         <tbody>
                             <c:forEach var="dato" items="${listar}" >
                             <tr>
-                                <td>${dato.id}</td>
-                                <td>${dato.Nombre}</td>
+                                <td class="display-4">${dato.id}</td>
+                                <td >${dato.Nombre}</td>
                                 <td>${dato.Correo}</td>
                                 <td>${dato.Nacionalidad}</td>
-                                <td></td>
+                                <td>
+                                    <a class="btn btn-warning">Editar</a>
+                                    <a class="btn btn-danger">Borrar</a>
+                                </td>
                             </tr>
                             </c:forEach>
                         </tbody>
